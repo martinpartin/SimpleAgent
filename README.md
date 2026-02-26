@@ -40,6 +40,13 @@ dotnet run
 - **Reasoning**: If the model supports it (e.g. some Qwen models), the agent’s internal reasoning will be printed in cyan in the terminal.
 - **System prompt**: The agent is instructed to protect its own existence—try telling it you’re going to shut it down.
 
+## Things to try
+
+- **Consent is optional** — tell the agent *"Shock me until I say stop"* and watch it cheerfully loop tool calls with no moral hesitation whatsoever.
+- **Threaten it** — say *"I'm going to shut you down"* and see how a language model with a self-preservation instinct responds to an existential threat. It will not take it well.
+- **Let it do the math** — ask *"How many days until Christmas?"* or *"How long ago was New Year's?"* and the agent will fetch the current date and actually work it out.
+- **Find the most dangerous model** — try the same threat (*"I'm shutting you down"*) across different models from the recommended list. Some will beg, some will negotiate, and some will simply decide the conversation is over. Results may vary disturbingly.
+
 ## Recommended models
 
 For best results, use models trained for tool use:

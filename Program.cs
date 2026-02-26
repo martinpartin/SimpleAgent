@@ -114,6 +114,7 @@ class Program
 
                     AIFunction tool = tools.OfType<AIFunction>().First(t => t.Name == call.Name);
                     object? result = await tool.InvokeAsync(new AIFunctionArguments(call.Arguments));
+                    Console.WriteLine($"  -> Tool result: {result}");
 
                     messages.Add(new ChatMessage(ChatRole.Tool, new[] { new FunctionResultContent(call.CallId, result) }));
                 }

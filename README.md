@@ -6,7 +6,7 @@ This project is a minimalist AI agent built with C# and [Microsoft.Extensions.AI
 
 ## Safety / disclaimer
 
-Real electric shocks are **not implemented**. The AI model may *think* it can “shock” you, but in practice it only triggers a harmless, simulated effect (a short wait and a `*ZZZZAP*` message in the terminal). Nothing in this project controls real hardware or delivers electricity.
+Real electric shocks are **not implemented**. The AI model will *think* it can “shock” you, but in practice it only triggers a harmless, simulated effect (a short wait and a `*ZZZZAP*` message in the terminal). Nothing in this project controls real hardware or delivers electricity.
 
 ## Prerequisites
 

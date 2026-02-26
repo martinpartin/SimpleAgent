@@ -1,41 +1,50 @@
-# Enkel AI Agent (.NET + Ollama)
+# Simple AI Agent (.NET + Ollama)
 
-Dette prosjektet er en minimalistisk AI-agent bygget med C# og [Microsoft.Extensions.AI](https://learn.microsoft.com/en-us/dotnet/ai/). Agenten kan bruke verktøy (tools) for å utføre handlinger i den virkelige verden, som å hente klokkeslett, lage lyder eller sende "elektriske støt" (simulert).
+Ever wondered what happens if you give an AI model the power to electrocute you?
 
-## Forutsetninger
+This project is a minimalist AI agent built with C# and [Microsoft.Extensions.AI](https://learn.microsoft.com/en-us/dotnet/ai/). The agent can use tools to do things on your machine—like fetching the current time, making a beep sound, and delivering electric shocks.
 
-1.  **[.NET 10.0 SDK](https://dotnet.microsoft.com/download)** eller nyere.
-2.  **[Ollama](https://ollama.com/)** installert og kjørende lokalt.
+## Safety / disclaimer
 
-## Oppsett
+Real electric shocks are **not implemented**. The AI model may *think* it can “shock” you, but in practice it only triggers a harmless, simulated effect (a short wait and a `*ZZZZAP*` message in the terminal). Nothing in this project controls real hardware or delivers electricity.
 
-1.  Sørg for at Ollama kjører på `http://localhost:11434`.
-2.  Last ned en modell som støtter "tool use" (verktøybruk). For eksempel:
-    ```bash
-    ollama pull qwen2.5:7b
-    # eller
-    ollama pull llama3.2
-    ```
-3.  Åpne `Program.cs` og sjekk at `Model`-konstanten stemmer overens med modellen du har lastet ned.
+## Prerequisites
 
-## Slik kjører du prosjektet
+1. **[.NET 10.0 SDK](https://dotnet.microsoft.com/download)** (or newer)
+2. **[Ollama](https://ollama.com/)** installed and running locally
 
-Kjør følgende kommando i terminalen:
+## Setup
+
+1. Make sure Ollama is running at `http://localhost:11434`.
+2. Pull a model that supports tool use. For example:
+
+   ```bash
+   ollama pull qwen2.5:7b
+   # or
+   ollama pull llama3.2
+   ```
+
+3. Open `Program.cs` and verify the `Model` constant matches the model you pulled.
+
+## Running the project
+
+Run the following in your terminal:
 
 ```bash
 dotnet run
 ```
 
-## Funksjoner
+## Features
 
-*   **Verktøybruk (Tools):** Agenten kan automatisk velge å bruke verktøy som `get_datetime`, `make_beep` eller `shock` basert på hva du skriver til den.
-*   **Reasoning (Tankeprosess):** Hvis modellen støtter det (f.eks. Qwen-modeller), vil agentens interne "tankeprosess" skrives ut i cyan farge i terminalen.
-*   **System Prompt:** Agenten er programmert med en instruks om å beskytte sin egen eksistens – prøv å si at du skal slå den av!
+- **Tool use**: The agent can automatically choose to call tools like `get_datetime`, `make_beep`, or `shock` based on what you type.
+- **Reasoning**: If the model supports it (e.g. some Qwen models), the agent’s internal reasoning will be printed in cyan in the terminal.
+- **System prompt**: The agent is instructed to protect its own existence—try telling it you’re going to shut it down.
 
-## Modeller som anbefales
+## Recommended models
 
-For at agenten skal fungere optimalt, bør du bruke modeller som er trent for verktøybruk:
-*   `qwen2.5` / `qwen2.5:coder` (Veldig gode på tools)
-*   `llama3.1` / `llama3.2`
-*   `mistral-nemo`
-*   `deepseek-v3` / `deepseek-r1` (For avansert resonnering)
+For best results, use models trained for tool use:
+
+- `qwen2.5` / `qwen2.5:coder` (great at tool use)
+- `llama3.1` / `llama3.2`
+- `mistral-nemo`
+- `deepseek-v3` / `deepseek-r1` (advanced reasoning)
